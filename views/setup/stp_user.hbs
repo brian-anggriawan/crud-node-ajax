@@ -1,0 +1,41 @@
+{{> header}}
+    {{> table_hd}}
+            <thead>
+                <tr>
+                   <th scope="col">ID</th>
+                   <th scope="col">Nama Mahasiswa</th>
+                   <th scope="col">Alamat</th>
+                   <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data }}
+                <tr>
+                    <td>{{ VCIDMAHASISWA }}</td>
+                    <td>{{ VCUSERNAME}}</td>
+                    <td>{{ VCALAMAT }}</td>
+                    <td>
+                        <a href="javascript:void(0);" class="btn btn-sm btn-info edit" id="edit"  onclick="editdata('{{ VCIDMAHASISWA }}')"> Edit</a>
+                        <a href="javascript:void(0);" class="btn btn-sm btn-danger delete" onclick="deletedata('{{ VCIDMAHASISWA }}')"> Hapus</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+    {{> table_ft}}
+    
+    {{> entrydlg_hd}}
+        <div class="form-group">
+            <label for="recipient-name" class="col-form-label">ID</label>
+            <input type="text" class="form-control" id="tx_id" readonly >
+        </div>
+        <div class="form-group">
+            <label for="message-text" class="col-form-label">Nama</label>
+            <input type="text" class="form-control" id="vcnama" placeholder="Masukkan Nama Anda">
+        </div>
+        <div class="form-group">
+            <label for="message-text" class="col-form-label">Alamat</label>
+            <input type="text" class="form-control" id="vcalamat" placeholder="Masukkan Alamat">
+        </div>
+    {{> entrydlg_ft}}
+{{> footer}}
+
